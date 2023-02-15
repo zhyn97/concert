@@ -1,0 +1,14 @@
+.logo {
+    max-width: 960px;
+    margin: 100px auto 150px;
+}
+
+.logo_main {
+    border-style: none;
+    display: block;
+    width: 100%;
+}
+
+.logo_additional {
+    width: 19%;
+}

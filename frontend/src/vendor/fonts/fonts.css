@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Heading Now Trial';
+    font-style:  normal;
+    font-weight: 700;
+    src: url(./HeadingNowTrial/HeadingNowTrial-67Extrabold.ttf);
+  }
+  
+  @font-face {
+    font-family: 'Heading Now Trial';
+    font-style:  normal;
+    font-weight: 400;
+    src: url(./HeadingNowTrial/HeadingNowTrial-43Book.ttf);
+  }
+  

@@ -1,0 +1,51 @@
+.admin {
+    font-family: monospace;
+    color: #BE2E2E;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin_button {
+    width: 100px;
+    font-size: 1.5rem;
+    border: 1px solid #BE2E2E;
+    background-color: #BE2E2E;
+    margin-left: auto;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.admin_button:hover{
+    background-color: rgba(0,0,0,0);
+    color: #ffffff;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 50px;
+}
+
+.form_header{
+    margin: 100px auto 10px;
+}
+
+.form_input{
+    background-color: rgba(0,0,0,0);
+    border: 1px solid #BE2E2E;
+    color: #BE2E2E;
+}
+
+.form_button{
+    margin-top: 5px;
+    border: 1px solid #BE2E2E;
+    background-color: #BE2E2E;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.form_button:hover{
+    background-color: rgba(0,0,0,0);
+    color: #ffffff;
+}

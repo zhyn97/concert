@@ -1,0 +1,19 @@
+body {
+    background-image: url('../public/img/close-up-black-marble-background\ 1.png');
+    background-color: #0C0C0C;
+    background-size: cover;
+}
+
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+
+@import url(./components/app/App.css);
+@import url(./components/header/Header.css);
+@import url(./components/item/Item.css);
+@import url(./components/main/Main.css);
+@import url(./components/footer/Footer.css);
+@import url(./components/admin/Admin.css);
+@import url(./components/login/Login.css);
+@import url(./components/adminItem/AdminItem.css);
+@import url(./components/modal/Modal.css);
+

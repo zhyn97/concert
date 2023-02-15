@@ -1,0 +1,28 @@
+.footer {
+    max-width: 1400px;
+    margin: 100px auto 150px;
+    border-top: 1px solid #FFFFFF;
+}
+
+.footer_header {
+    font-family: 'Heading Now Trial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 84px;
+    letter-spacing: 0.055em;
+    color: #FFFFFF;
+    margin: 40px 0 0;
+}
+
+.footer_text {
+    font-family: 'Heading Now Trial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 37px;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    text-align: left;
+    margin: 40px 0 0;
+}
