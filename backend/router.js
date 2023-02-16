@@ -7,7 +7,7 @@ import auth from "./middlewares/auth.js";
 const router = new Router();
 
 // const corsOptions = {
-//   origin: 'http://localhost:3000',
+//   origin: 'http://195.133.147.210',
 //   credentials: true
 // }
 

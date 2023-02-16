@@ -5,7 +5,7 @@ function Item({ deleteCard, onModal, items, setItems }) {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:4000/api/cards")
+        fetch("http://195.133.147.210/api/cards")
             .then((res) => res.json())
             .then(
                 (result) => {

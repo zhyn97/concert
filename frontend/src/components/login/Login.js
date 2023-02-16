@@ -32,7 +32,7 @@ function Login({ setLoggedIn }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    fetch("http://localhost:4000/api/login/", {
+    fetch("http://195.133.147.210/api/login/", {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       headers: {
         'Content-Type': 'application/json',

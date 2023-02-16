@@ -69,7 +69,7 @@ function Admin() {
     function upDate(e) {
         e.preventDefault();
         const token = checkToken();
-        fetch("http://localhost:4000/api/cards/", {
+        fetch("http://195.133.147.210/api/cards/", {
             method: 'PUT', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ function Admin() {
         e.preventDefault();
         const token = checkToken();
         const id = e.target.parentElement.parentElement.id
-        fetch(`http://localhost:4000/api/cards/${id}`, {
+        fetch(`http://195.133.147.210/api/cards/${id}`, {
             method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',
@@ -115,7 +115,7 @@ function Admin() {
     function addCard(e) {
         e.preventDefault();
         const token = checkToken();
-        fetch(`http://localhost:4000/api/cards`, {
+        fetch(`http://195.133.147.210/api/cards`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',
