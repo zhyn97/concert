@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import router from "./router.js";
+import cors from "cors";
 
 const PORT = 4000;
 const DB_URL =
@@ -9,6 +10,10 @@ const DB_URL =
 const app = express();
 
 app.use(express.json());
+app.use(cors({
+  origin: 'http://195.133.147.210',
+  credentials: true,
+}));
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', 'http://195.133.147.210');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
