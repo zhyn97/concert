@@ -2,6 +2,7 @@
     width: 350px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .item_info {}
@@ -41,10 +42,11 @@
     background-color: #BE2E2E;
     color: #FFFFFF;
     transition: all .2s ease;
+    cursor: pointer;
 }
 
 .item_info-button:hover {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .item_date {
@@ -56,4 +58,31 @@
     letter-spacing: 0.055em;
     color: #FFFFFF;
     margin: 15px 0 0 0;
+}
+
+@media (max-width: 550px) {
+    .item_info-city {
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 32px;
+    }
+
+    .item_info-club {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 21px;
+    }
+
+    .item_info-button {
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 20px;
+        width: 150px;
+    }
+    
+    .item_date {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 20px;
+    }
 }

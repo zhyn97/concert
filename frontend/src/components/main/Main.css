@@ -1,8 +1,40 @@
-.main {
-    display: flex;
-    flex-wrap: wrap;
+.main_wrapper {
+    overflow: hidden;
+}
+
+.main_items {
     max-width: 1400px;
     margin: 0 auto;
-    justify-content: space-between;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
     gap: 100px 150px;
+}
+
+.main_items div:nth-child(3n+4)::before {
+    content: " ";
+    background: #252525;
+    width: 4000px;
+    height: 1px;
+    /* располагаем линию сверху от текста */
+    top: -50px;
+    left: -1500px;
+    /* включаем абсолютное позиционирование относительно блока с relative */
+    position: absolute;
+}
+
+@media (max-width: 1400px) {
+    .main_items {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main_items div:nth-child(3n+4)::before {
+        display: none;
+    }
 }

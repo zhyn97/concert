@@ -2,6 +2,7 @@ import { useState, React } from "react";
 import { useNavigate } from 'react-router-dom';
 import AdminItem from "../adminItem/AdminItem.js";
 import Modal from "../modal/Modal.js";
+import api from '../../utilities/api';
 
 function Admin() {
     const [isModal, setModal] = useState(false);
@@ -24,7 +25,6 @@ function Admin() {
     function checkToken() {
         const token = localStorage.getItem('token');
         if(token){
-            console.log(token);
             return token;
         } else {
             throw new Error("Invalid token");
@@ -37,13 +37,10 @@ function Admin() {
     }
 
     function onModal(e) {
-        console.log(e.target.parentElement.parentElement);
-        console.log(items)
         const item = items.find(item => item._id === e.target.parentElement.parentElement.id);
         setData(prevState => {
             return { ...prevState, ...item };
         })
-        console.log(item);
         setModal(true);
     }
 
@@ -51,14 +48,12 @@ function Admin() {
         setData(prevState => {
             return { ...prevState, ...{ [e.target.name]: e.target.value } };
         })
-        console.log(data);
     }
 
     function onChangeNewItem(e) {
         setNewItem(prevState => {
             return { ...prevState, ...{ [e.target.name]: e.target.value } };
         })
-        console.log(newItem);
     }
 
     function onClose() {
@@ -69,17 +64,8 @@ function Admin() {
     function upDate(e) {
         e.preventDefault();
         const token = checkToken();
-        fetch("http://195.133.147.210/api/cards/", {
-            method: 'PUT', // *GET, POST, PUT, DELETE, etc.
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
+        api.upDate(token, data)
             .then(res => {
-                console.log(`all done`, res);
                 const item = items.map((item) => (
                     item._id === res._id
                         ? { ...item, ...res }
@@ -95,16 +81,8 @@ function Admin() {
         e.preventDefault();
         const token = checkToken();
         const id = e.target.parentElement.parentElement.id
-        fetch(`http://195.133.147.210/api/cards/${id}`, {
-            method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-        })
-            .then(res => res.json())
+        api.delete(id, token)
             .then(res => {
-                console.log(`all done`, res, token);
                 const item = items.filter(item => item._id !== id);
                 setItems(item);
                 onClose();
@@ -115,17 +93,8 @@ function Admin() {
     function addCard(e) {
         e.preventDefault();
         const token = checkToken();
-        fetch(`http://195.133.147.210/api/cards`, {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(newItem)
-        })
-            .then(res => res.json())
+        api.addCard(token, newItem)
             .then(res => {
-                console.log(`all done`, res);
                 const newItems = [...items, res];
                 setItems(newItems);
                 setNewItem({

@@ -16,4 +16,5 @@ body {
 @import url(./components/login/Login.css);
 @import url(./components/adminItem/AdminItem.css);
 @import url(./components/modal/Modal.css);
+@import url(./components/warningPopUp/WarningPopUp.css);
 

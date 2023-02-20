@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BASE_URL } from '../../utilities/constant';
 
 function Item() {
   const [error, setError] = useState(null);
@@ -6,7 +7,7 @@ function Item() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://195.133.147.210/api/cards")
+    fetch(`${BASE_URL}/api/cards`)
       .then((res) => res.json())
       .then(
         (result) => {

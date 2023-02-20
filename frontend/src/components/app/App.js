@@ -2,26 +2,11 @@ import './App.css';
 import Main from '../main/Main';
 import Admin from '../admin/Admin';
 import Login from '../login/Login';
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { useState } from 'react';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-
-  const navigate = useNavigate();
-
-  // function tokenCheck() {
-  //   if (localStorage.getItem('token')) {
-  //     const token = localStorage.getItem('token');
-  //     console.log(token);
-  //     setLoggedIn(true);
-  //     navigate('/admin');
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   tokenCheck();
-  // }, [])
 
   return (
     <>

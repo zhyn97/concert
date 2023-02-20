@@ -7,7 +7,11 @@ function Main(item) {
     return (
         <div className="main">
             <Header />
-            <Item />
+            <div className="main_wrapper">
+                <div className="main_items">
+                    <Item />
+                </div>
+            </div>
             <Footer />
         </div>
     )

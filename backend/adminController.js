@@ -22,7 +22,7 @@ class AdminController {
             const { login, password } = req.body;
             const admin = await Admin.find({ login });
             if(admin.length === 0) {
-                res.status(401).json({ message: 'Incorrect username' });
+                res.status(401).json({ message: 'Incorrect username or password' });
                 return;
             }
             const match = await bcrypt.compare(password, admin[0].password);
@@ -33,7 +33,7 @@ class AdminController {
                     token: token
                 });
             } else {
-                res.status(401).json({ message: 'Incorrect password', });
+                res.status(401).json({ message: 'Incorrect username or password', });
             }
         } catch (error) {
             res.status(500).json(error);

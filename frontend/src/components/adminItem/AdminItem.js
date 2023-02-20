@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { BASE_URL } from '../../utilities/constant';
 
 function Item({ deleteCard, onModal, items, setItems }) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        fetch("http://195.133.147.210/api/cards")
+        fetch(`${BASE_URL}/api/cards`)
             .then((res) => res.json())
             .then(
                 (result) => {

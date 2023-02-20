@@ -1,0 +1,36 @@
+.warning {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #BE2E2E;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: none;
+}
+
+.warning_text {
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-family: 'Heading Now Trial';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.055em;
+    font-size: 1.5rem;
+}
+
+.warning_active {
+    display: block;
+    animation: 2s ease 0s  rot;
+}
+
+@keyframes rot {
+    0% {
+        top: -100px;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
